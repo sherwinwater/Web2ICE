@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+
+<body>
+    <script type="text/javascript">
+        // The current number
+        var current = 0;
+
+        // counts up by inc steps
+        function count(inc) {
+            var newVal = current + inc;
+            current = newVal;
+            var node = document.getElementById("counter");
+            node.innerHTML = "" + current;
+        }
+
+        var myname = myName("mary");
+        console.log(myname);
+
+        console.log(myName("andy"));
+
+        function myName(name) {
+            // console.log(name);
+            return "my name is " + name;
+        }
+
+        function counts(number1 = 2, number2 = 10) {
+            return number1 + number2;
+        }
+        console.log(counts(1, 1, 2)); // 1+1
+
+        console.log(n1); // undefined
+        var n1 = 2;
+        // arrow
+        let arrow1 = (n1, n2) => n1 + n2;
+        var n2 = 3;
+        console.log(arrow1(1, 2));
+        console.log(arrow1(n1, n2));
+
+        // self invoking
+        (function () {
+            console.log("self-invoking");
+        })();
+
+        (function () {
+            var me = "anad";
+
+            function meter(x) {
+                return 2 * x;
+            }
+            window.me = me;
+            window.meter = meter;
+        })(window);
+        console.log(me);
+        console.log(meter); // function
+        console.log(meter(3));
+
+        // function expression
+        // var x = 90;
+        // var y = 3;
+        // var x,y;
+        var showMe = function (x, y) {
+            console.log(x + y);
+        };
+        showMe(); // x y not initialized
+        showMe(10, 1);
+ 
+
+        // showMe2(); // showMe2 is a variable. must be initialized first.
+        var a = 2;
+        var b = 3;
+        const showMe2 = function (a, b) {
+            console.log(a + b);
+        };
+        showMe2(); // NaN, a, b is not the variable a, b in showMe2
+        showMe2(200, 2);
+
+        // showMe2(100, 2);
+
+        //nested function
+        function firstFunc(name) {
+            let add = "toronto";
+
+            function secondFunc() {
+                let cn = "canada";
+
+                function thirdFunc() {
+                    return name + " in " + add + " which is a city in " + cn;
+                }
+                return thirdFunc();
+            }
+            return secondFunc();
+        }
+        console.log(firstFunc("Bob"));
+
+        let name = firstFunc;
+        console.log(name);
+        console.log("----");
+        let name2 = firstFunc();
+        console.log(name2);
+        let name3 = firstFunc("Fred");
+        console.log(name3)
+
+        // closure
+        console.log("------closure 1------")
+        let x = 0; // outer variable
+        function a1() {
+            let x1 = 0; // inner variable
+            console.log("x: " + x);
+            console.log("x1: " + x1);
+            x += 1;
+            x1 += 1;
+            return x;
+        }
+        console.log(a1);
+        console.log(a1());
+        console.log(a1());
+        console.log(a1());
+        console.log("-------_a1------");
+        const _a1 = a1(); // == a1()
+
+        // ---2 nested
+        console.log("------closure 2------")
+
+        function createCounter() {
+            let x = 0;
+
+            function a1() {
+                x += 1;
+                return x;
+            }
+            return a1;
+        }
+        console.log(createCounter); // function
+        console.log(createCounter());
+        const increment = createCounter();
+        console.log(increment);
+        console.log(increment());
+        console.log(increment());
+
+        //--3 nested
+        console.log("------closure 3------")
+
+        function createCounter2() {
+            let x = 0;
+            console.log("createCounter2");
+
+            function a1() {
+                x += 1;
+                console.log('a1 ' + x);
+
+                function a2() {
+                    x += 1;
+                    console.log('a2 ' + x);
+                    return x;
+                }
+                return a2;
+            }
+            return a1;
+        }
+        // console.log(createCounter2);
+        // console.log(createCounter2());
+        // console.log(createCounter2()());
+        // console.log(createCounter2()()());
+        console.log("-----counter2 function---------")
+
+        const increment2 = createCounter2;
+        const increment3 = increment2();
+        const increment4 = increment3();
+        console.log("------return createCounter2--------")
+        console.log(increment2);
+        console.log("------return a1--------")
+        console.log(increment3);
+        console.log(createCounter2());
+
+        console.log("-------return a2-------")
+        console.log(increment4);
+        console.log(createCounter2()());
+
+        console.log("-------return x-------")
+        console.log(increment4());
+        console.log(createCounter2()()());
+
+        //week2 DOM
+        console.log(document.contentType);
+        console.log(document.title);
+        console.log(document.all);
+        console.log(document.body.childElementCount);
+    </script>
+</body>
+
+</html>

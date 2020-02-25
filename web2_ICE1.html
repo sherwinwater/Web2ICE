@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+
+<body>
+    <input type="button" onclick="count(1);" value="Count by 1's" />
+
+    <script type="text/javascript">
+        // variables/string,numbers
+        // operators
+        var x, n = name;
+        // alert(x+n); // undefined
+
+        var x = 3,
+            y = 4,
+            z = x + y;
+        console.log(z); //7
+
+        var s = "3",
+            s1 = 7,
+            s2 = 3;
+        console.log(s * s1); //3*7=21
+        console.log(s1 + s); //73
+        console.log(s + s1); //37
+        console.log(s + s1 + s2); //373
+        console.log(s1 + s2 + s); //103
+        console.log(s1 + s2 + s * 3 + s); //193
+        console.log(s / s2); //1
+        console.log(s - s1); // -4
+        console.log(s1 - s); // 4
+        console.log((s + s1) * 3); //111
+        var zz = "1good" + 7;
+        console.log(zz); //1good7
+        console.log(zz * 5); //NAN
+        console.log(zz + 1); //1good71
+
+        var i = "7",
+            j = 7;
+        console.log(i == j); //true
+        console.log(i === j); //false
+        console.log("e" <"g"); // true
+        //conversion
+        console.log(parseInt("3"));
+        // console.log(parseDouble("3.33")); // no
+        console.log(parseFloat("4.2"));
+        console.log(parseInt("batman888")); //NaN
+        console.log(parseInt("+007bond")); //7
+        console.log(parseInt("-57ooo")); //-57
+        console.log(parseFloat("28")); //28
+        console.log(parseFloat("43.33-+++&^%")); //43.33
+        console.log(parseFloat("9.9.9")); //9.9
+        console.log(parseFloat("-14.33")); //-14.33
+
+        // array
+        var a = new Array();
+        var a = [];
+        var a = ["a", 123, 123, true];
+        console.log(a.length);
+        a.push("1");
+
+        for (var i = 0; i < a.length; i++) console.log(a[i]);
+        for (i of a) console.log(i);
+
+        console.log(a.indexOf("x"));
+        var b = ["bob", "toronto", "what's"];
+        var c = a.concat(b);
+        console.log(c);
+        console.log(a.indexOf("123")); //-1
+        console.log(a.indexOf(123));
+
+        // template literals
+        let song = "favorite song";
+        let songname = 'fight';
+        let songs = `my ${song} is 
+        ${songname} d is ${4/5*100}%!@#$%^&*()_+~,.;'/[]\-=<>:"?{}|`;
+        console.log(songs);
+
+    </script>
+</body>
+
+</html>

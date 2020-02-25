@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>middle term 2020 winter</title>
+</head>
+
+<body>
+    <h1> middle term 2020 winter</h1>
+    <a>heloo</a>
+    <a>heloo</a>
+    <a>heloo</a>
+    <form>
+        <input type="text">
+        <input type="text">
+    </form>
+    <form>
+        <input type="text">
+        <input type="email">
+        <input type="date">
+        <input type="button" id="button">setTimeout
+        <input type="button" id="button2">prompt
+
+        <input type="number">
+    </form>
+    <form>
+        <input type="text">
+        <input type="text">
+    </form>
+
+    <script type="text/javascript">
+        // middle term 2020 winter
+        // string vs numbers 
+        // https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Strings
+        console.log("A"); // NaN
+        console.log("E" < "G"); // true
+        console.log("e" < "g"); // true
+        console.log("A" - "B"); // NaN
+        console.log("A"+"B"); // AB
+        console.log("A" - "B" + 2); // NaN
+        console.log(1 + 2 + "1" * 5) // 8
+        console.log(1 + 2 + "1" * 5 + "3") // 83
+        console.log(1 + 2 + "1" * 5 + "3" + 6 + 7) // 8367
+        console.log(1 + 2 + "AB"); //3AB
+        console.log("A" + 2 + 3); // A23
+        console.log("3"+6+7); // 367
+        console.log(100 * NaN) // NaN
+        console.log("100" / "0"); //Infinity
+
+        // concatenation in context
+
+
+        // array 
+        function arr1() {
+            var a = Array();
+            a[0] = 3;
+            a[10] = 10;
+            a[50] = 32;
+            return a.length;
+        }
+        console.log(arr1());
+        console.log(arr1[9]);  // undefined
+        console.log(arr1[510]); // undefined
+
+        // remove element
+        var a = document.querySelectorAll("a");
+        var a1;
+        //    for(a1 of a) {a1.remove()};  // work
+        for (let i = 0; i < a.length; i++) {
+            a[i].remove();
+        }
+
+        // document.forms[1]
+        var form2 = document.forms[1];
+        console.log(form2.length);
+        for (let i = 0; i < form2.length; i++) {
+            console.log(form2[i].type);
+        }
+
+        // setTimeout(2000)
+        var btn = document.getElementById("button");
+        var btn2 = document.getElementById("button2");
+
+        // method 1
+        btn.addEventListener("click", () => {
+            setTimeout(() => {
+                alert("hello");
+            }, 2000)
+        });
+
+        // btn.addEventListener("click", showMsg()); // showMsg() invoke self
+        // method 2
+        btn.addEventListener("click", showMsg);
+
+        function showMsg() {
+            setTimeout(() => {
+                alert("showMsg");
+            }, 2000);
+        }
+
+        // prompt and confirm
+        // prompt("how are you?"); // show a message and get the feedback
+        // confirm("how are you?"); // show a message and get the feedback
+
+        // nested function
+        function f1(x1) {
+            return function f2(x2) {
+                return function f3(x3) {
+                    return `${x1} ${x2} ${x3}`;
+                }
+            }
+        }
+        const x1 = f1("five ");
+        const x2 = x1("me ");
+        const x3 = x2("Give ");
+        console.log(x3);
+
+        const x4 = f1("five ")("me ")("Give-x4 ");
+        console.log(x4);
+
+    </script>
+</body>
+
+</html>
